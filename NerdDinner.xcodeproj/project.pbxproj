@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACF2BEB814A377AD0038F290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2BEB714A377AD0038F290 /* UIKit.framework */; };
+		ACF2BEBA14A377AD0038F290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2BEB914A377AD0038F290 /* Foundation.framework */; };
+		ACF2BEBC14A377AD0038F290 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2BEBB14A377AD0038F290 /* CoreGraphics.framework */; };
+		ACF2BEC214A377AE0038F290 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACF2BEC014A377AE0038F290 /* InfoPlist.strings */; };
+		ACF2BEC414A377AE0038F290 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BEC314A377AE0038F290 /* main.m */; };
+		ACF2BEC814A377AE0038F290 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BEC714A377AE0038F290 /* AppDelegate.m */; };
+		ACF2BECB14A377AE0038F290 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BECA14A377AE0038F290 /* MasterViewController.m */; };
+		ACF2BECE14A377AE0038F290 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BECD14A377AE0038F290 /* DetailViewController.m */; };
+		ACF2BED114A377AE0038F290 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF2BECF14A377AE0038F290 /* MasterViewController.xib */; };
+		ACF2BED414A377AE0038F290 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF2BED214A377AE0038F290 /* DetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ACF2BEB314A377AD0038F290 /* NerdDinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdDinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACF2BEB714A377AD0038F290 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ACF2BEB914A377AD0038F290 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ACF2BEBB14A377AD0038F290 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ACF2BEBF14A377AE0038F290 /* NerdDinner-Info.plist */ = {isa = PBXFileReference; path = "NerdDinner-Info.plist"; sourceTree = "<group>"; };
+		ACF2BEC114A377AE0038F290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ACF2BEC314A377AE0038F290 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACF2BEC514A377AE0038F290 /* NerdDinner-Prefix.pch */ = {isa = PBXFileReference; path = "NerdDinner-Prefix.pch"; sourceTree = "<group>"; };
+		ACF2BEC614A377AE0038F290 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		ACF2BEC714A377AE0038F290 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ACF2BEC914A377AE0038F290 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		ACF2BECA14A377AE0038F290 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		ACF2BECC14A377AE0038F290 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		ACF2BECD14A377AE0038F290 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		ACF2BED014A377AE0038F290 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		ACF2BED314A377AE0038F290 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACF2BEB014A377AD0038F290 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACF2BEB814A377AD0038F290 /* UIKit.framework in Frameworks */,
+				ACF2BEBA14A377AD0038F290 /* Foundation.framework in Frameworks */,
+				ACF2BEBC14A377AD0038F290 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACF2BEA814A377AD0038F290 = {
+			isa = PBXGroup;
+			children = (
+				ACF2BEBD14A377AE0038F290 /* NerdDinner */,
+				ACF2BEB614A377AD0038F290 /* Frameworks */,
+				ACF2BEB414A377AD0038F290 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACF2BEB414A377AD0038F290 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACF2BEB314A377AD0038F290 /* NerdDinner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACF2BEB614A377AD0038F290 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACF2BEB714A377AD0038F290 /* UIKit.framework */,
+				ACF2BEB914A377AD0038F290 /* Foundation.framework */,
+				ACF2BEBB14A377AD0038F290 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACF2BEBD14A377AE0038F290 /* NerdDinner */ = {
+			isa = PBXGroup;
+			children = (
+				ACF2BEC614A377AE0038F290 /* AppDelegate.h */,
+				ACF2BEC714A377AE0038F290 /* AppDelegate.m */,
+				ACF2BEC914A377AE0038F290 /* MasterViewController.h */,
+				ACF2BECA14A377AE0038F290 /* MasterViewController.m */,
+				ACF2BECC14A377AE0038F290 /* DetailViewController.h */,
+				ACF2BECD14A377AE0038F290 /* DetailViewController.m */,
+				ACF2BECF14A377AE0038F290 /* MasterViewController.xib */,
+				ACF2BED214A377AE0038F290 /* DetailViewController.xib */,
+				ACF2BEBE14A377AE0038F290 /* Supporting Files */,
+			);
+			path = NerdDinner;
+			sourceTree = "<group>";
+		};
+		ACF2BEBE14A377AE0038F290 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACF2BEBF14A377AE0038F290 /* NerdDinner-Info.plist */,
+				ACF2BEC014A377AE0038F290 /* InfoPlist.strings */,
+				ACF2BEC314A377AE0038F290 /* main.m */,
+				ACF2BEC514A377AE0038F290 /* NerdDinner-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACF2BEB214A377AD0038F290 /* NerdDinner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACF2BED714A377AE0038F290 /* Build configuration list for PBXNativeTarget "NerdDinner" */;
+			buildPhases = (
+				ACF2BEAF14A377AD0038F290 /* Sources */,
+				ACF2BEB014A377AD0038F290 /* Frameworks */,
+				ACF2BEB114A377AD0038F290 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NerdDinner;
+			productName = NerdDinner;
+			productReference = ACF2BEB314A377AD0038F290 /* NerdDinner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACF2BEAA14A377AD0038F290 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = ACF2BEAD14A377AD0038F290 /* Build configuration list for PBXProject "NerdDinner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ACF2BEA814A377AD0038F290;
+			productRefGroup = ACF2BEB414A377AD0038F290 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACF2BEB214A377AD0038F290 /* NerdDinner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACF2BEB114A377AD0038F290 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACF2BEC214A377AE0038F290 /* InfoPlist.strings in Resources */,
+				ACF2BED114A377AE0038F290 /* MasterViewController.xib in Resources */,
+				ACF2BED414A377AE0038F290 /* DetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACF2BEAF14A377AD0038F290 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACF2BEC414A377AE0038F290 /* main.m in Sources */,
+				ACF2BEC814A377AE0038F290 /* AppDelegate.m in Sources */,
+				ACF2BECB14A377AE0038F290 /* MasterViewController.m in Sources */,
+				ACF2BECE14A377AE0038F290 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ACF2BEC014A377AE0038F290 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACF2BEC114A377AE0038F290 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ACF2BECF14A377AE0038F290 /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACF2BED014A377AE0038F290 /* en */,
+			);
+			name = MasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		ACF2BED214A377AE0038F290 /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACF2BED314A377AE0038F290 /* en */,
+			);
+			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACF2BED514A377AE0038F290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ACF2BED614A377AE0038F290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACF2BED814A377AE0038F290 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NerdDinner/NerdDinner-Prefix.pch";
+				INFOPLIST_FILE = "NerdDinner/NerdDinner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ACF2BED914A377AE0038F290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NerdDinner/NerdDinner-Prefix.pch";
+				INFOPLIST_FILE = "NerdDinner/NerdDinner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACF2BEAD14A377AD0038F290 /* Build configuration list for PBXProject "NerdDinner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACF2BED514A377AE0038F290 /* Debug */,
+				ACF2BED614A377AE0038F290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACF2BED714A377AE0038F290 /* Build configuration list for PBXNativeTarget "NerdDinner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACF2BED814A377AE0038F290 /* Debug */,
+				ACF2BED914A377AE0038F290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACF2BEAA14A377AD0038F290 /* Project object */;
+}
