@@ -24,6 +24,21 @@
 		AC7CF86E14BAF8A700AC5F92 /* MathGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7CF86414BAF8A700AC5F92 /* MathGraph.png */; };
 		AC7CF86F14BAF8A700AC5F92 /* StarsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7CF86514BAF8A700AC5F92 /* StarsBackground.png */; };
 		AC7CF87014BAF8A700AC5F92 /* StarsForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7CF86614BAF8A700AC5F92 /* StarsForeground.png */; };
+		AC7CF87314BAFBEE00AC5F92 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */; };
+		AC7CF87714BAFEDE00AC5F92 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CF87614BAFEDD00AC5F92 /* GradientButton.m */; };
+		ACBD0EEB14BBB01A00C2FC3C /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ECE14BBB01A00C2FC3C /* ButtonCell.m */; };
+		ACBD0EEC14BBB01A00C2FC3C /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBD0ECF14BBB01A00C2FC3C /* ButtonCell.xib */; };
+		ACBD0EED14BBB01A00C2FC3C /* LabelCell+Selectable.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ED114BBB01A00C2FC3C /* LabelCell+Selectable.m */; };
+		ACBD0EEE14BBB01A00C2FC3C /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ED314BBB01A00C2FC3C /* LabelCell.m */; };
+		ACBD0EEF14BBB01A00C2FC3C /* NibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBD0ED414BBB01A00C2FC3C /* NibCell.xib */; };
+		ACBD0EF014BBB01A00C2FC3C /* NibLoadedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ED614BBB01A00C2FC3C /* NibLoadedCell.m */; };
+		ACBD0EF114BBB01A00C2FC3C /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ED814BBB01A00C2FC3C /* TextFieldCell.m */; };
+		ACBD0EF214BBB01A00C2FC3C /* GradientBackgroundTable.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EDB14BBB01A00C2FC3C /* GradientBackgroundTable.m */; };
+		ACBD0EF314BBB01A00C2FC3C /* DetailDisclosureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EDE14BBB01A00C2FC3C /* DetailDisclosureCell.m */; };
+		ACBD0EF514BBB01A00C2FC3C /* PageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EE314BBB01A00C2FC3C /* PageCell.m */; };
+		ACBD0EF614BBB01A00C2FC3C /* PageCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EE514BBB01A00C2FC3C /* PageCellBackground.m */; };
+		ACBD0EF714BBB01A00C2FC3C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EE714BBB01A00C2FC3C /* PageViewController.m */; };
+		ACBD0EF814BBB01A00C2FC3C /* RoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EEA14BBB01A00C2FC3C /* RoundRect.m */; };
 		ACC7984014A392E700021C5B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC7983F14A392E700021C5B /* CoreLocation.framework */; };
 		ACC7984214A392ED00021C5B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC7984114A392ED00021C5B /* MapKit.framework */; };
 		ACC7984614A3930200021C5B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC7984414A3930100021C5B /* MapViewController.m */; };
@@ -78,6 +93,34 @@
 		AC7CF86414BAF8A700AC5F92 /* MathGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathGraph.png; sourceTree = "<group>"; };
 		AC7CF86514BAF8A700AC5F92 /* StarsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsBackground.png; sourceTree = "<group>"; };
 		AC7CF86614BAF8A700AC5F92 /* StarsForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsForeground.png; sourceTree = "<group>"; };
+		AC7CF87114BAFBEE00AC5F92 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../../github/maggixMBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../github/maggixMBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		AC7CF87514BAFEDD00AC5F92 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = ../../github/maggixMBProgressHUD/Demo/GradientButton.h; sourceTree = "<group>"; };
+		AC7CF87614BAFEDD00AC5F92 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientButton.m; path = ../../github/maggixMBProgressHUD/Demo/GradientButton.m; sourceTree = "<group>"; };
+		ACBD0ECD14BBB01A00C2FC3C /* ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCell.h; sourceTree = "<group>"; };
+		ACBD0ECE14BBB01A00C2FC3C /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
+		ACBD0ECF14BBB01A00C2FC3C /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		ACBD0ED014BBB01A00C2FC3C /* LabelCell+Selectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LabelCell+Selectable.h"; sourceTree = "<group>"; };
+		ACBD0ED114BBB01A00C2FC3C /* LabelCell+Selectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LabelCell+Selectable.m"; sourceTree = "<group>"; };
+		ACBD0ED214BBB01A00C2FC3C /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
+		ACBD0ED314BBB01A00C2FC3C /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
+		ACBD0ED414BBB01A00C2FC3C /* NibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NibCell.xib; sourceTree = "<group>"; };
+		ACBD0ED514BBB01A00C2FC3C /* NibLoadedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibLoadedCell.h; sourceTree = "<group>"; };
+		ACBD0ED614BBB01A00C2FC3C /* NibLoadedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibLoadedCell.m; sourceTree = "<group>"; };
+		ACBD0ED714BBB01A00C2FC3C /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		ACBD0ED814BBB01A00C2FC3C /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		ACBD0EDA14BBB01A00C2FC3C /* GradientBackgroundTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientBackgroundTable.h; sourceTree = "<group>"; };
+		ACBD0EDB14BBB01A00C2FC3C /* GradientBackgroundTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientBackgroundTable.m; sourceTree = "<group>"; };
+		ACBD0EDD14BBB01A00C2FC3C /* DetailDisclosureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailDisclosureCell.h; sourceTree = "<group>"; };
+		ACBD0EDE14BBB01A00C2FC3C /* DetailDisclosureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailDisclosureCell.m; sourceTree = "<group>"; };
+		ACBD0EE214BBB01A00C2FC3C /* PageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCell.h; sourceTree = "<group>"; };
+		ACBD0EE314BBB01A00C2FC3C /* PageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCell.m; sourceTree = "<group>"; };
+		ACBD0EE414BBB01A00C2FC3C /* PageCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageCellBackground.h; sourceTree = "<group>"; };
+		ACBD0EE514BBB01A00C2FC3C /* PageCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageCellBackground.m; sourceTree = "<group>"; };
+		ACBD0EE614BBB01A00C2FC3C /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		ACBD0EE714BBB01A00C2FC3C /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		ACBD0EE914BBB01A00C2FC3C /* RoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundRect.h; sourceTree = "<group>"; };
+		ACBD0EEA14BBB01A00C2FC3C /* RoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRect.m; sourceTree = "<group>"; };
 		ACC7983F14A392E700021C5B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ACC7984114A392ED00021C5B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ACC7984314A3930100021C5B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -216,10 +259,99 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		AC7CF87814BAFEE300AC5F92 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				AC7CF87514BAFEDD00AC5F92 /* GradientButton.h */,
+				AC7CF87614BAFEDD00AC5F92 /* GradientButton.m */,
+				AC7CF87114BAFBEE00AC5F92 /* MBProgressHUD.h */,
+				AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */,
+			);
+			name = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		ACBD0E6D14BBAEAC00C2FC3C /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD0ECC14BBB01A00C2FC3C /* Custom Cells */,
+				ACBD0ED914BBB01A00C2FC3C /* Custom Views */,
+				ACBD0EDC14BBB01A00C2FC3C /* Detail View */,
+				ACBD0EE114BBB01A00C2FC3C /* PageView Hierarchy */,
+				ACBD0EE814BBB01A00C2FC3C /* Utility */,
+			);
+			name = PageView;
+			sourceTree = "<group>";
+		};
+		ACBD0ECC14BBB01A00C2FC3C /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD0ECD14BBB01A00C2FC3C /* ButtonCell.h */,
+				ACBD0ECE14BBB01A00C2FC3C /* ButtonCell.m */,
+				ACBD0ECF14BBB01A00C2FC3C /* ButtonCell.xib */,
+				ACBD0ED014BBB01A00C2FC3C /* LabelCell+Selectable.h */,
+				ACBD0ED114BBB01A00C2FC3C /* LabelCell+Selectable.m */,
+				ACBD0ED214BBB01A00C2FC3C /* LabelCell.h */,
+				ACBD0ED314BBB01A00C2FC3C /* LabelCell.m */,
+				ACBD0ED414BBB01A00C2FC3C /* NibCell.xib */,
+				ACBD0ED514BBB01A00C2FC3C /* NibLoadedCell.h */,
+				ACBD0ED614BBB01A00C2FC3C /* NibLoadedCell.m */,
+				ACBD0ED714BBB01A00C2FC3C /* TextFieldCell.h */,
+				ACBD0ED814BBB01A00C2FC3C /* TextFieldCell.m */,
+			);
+			name = "Custom Cells";
+			path = "../../sources/TableDesignRevisited/Classes/PageView/Custom Cells";
+			sourceTree = "<group>";
+		};
+		ACBD0ED914BBB01A00C2FC3C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD0EDA14BBB01A00C2FC3C /* GradientBackgroundTable.h */,
+				ACBD0EDB14BBB01A00C2FC3C /* GradientBackgroundTable.m */,
+			);
+			name = "Custom Views";
+			path = "../../sources/TableDesignRevisited/Classes/PageView/Custom Views";
+			sourceTree = "<group>";
+		};
+		ACBD0EDC14BBB01A00C2FC3C /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD0EDD14BBB01A00C2FC3C /* DetailDisclosureCell.h */,
+				ACBD0EDE14BBB01A00C2FC3C /* DetailDisclosureCell.m */,
+			);
+			name = "Detail View";
+			path = "../../sources/TableDesignRevisited/Classes/PageView/Detail View";
+			sourceTree = "<group>";
+		};
+		ACBD0EE114BBB01A00C2FC3C /* PageView Hierarchy */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD0EE214BBB01A00C2FC3C /* PageCell.h */,
+				ACBD0EE314BBB01A00C2FC3C /* PageCell.m */,
+				ACBD0EE414BBB01A00C2FC3C /* PageCellBackground.h */,
+				ACBD0EE514BBB01A00C2FC3C /* PageCellBackground.m */,
+				ACBD0EE614BBB01A00C2FC3C /* PageViewController.h */,
+				ACBD0EE714BBB01A00C2FC3C /* PageViewController.m */,
+			);
+			name = "PageView Hierarchy";
+			path = "../../sources/TableDesignRevisited/Classes/PageView/PageView Hierarchy";
+			sourceTree = "<group>";
+		};
+		ACBD0EE814BBB01A00C2FC3C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD0EE914BBB01A00C2FC3C /* RoundRect.h */,
+				ACBD0EEA14BBB01A00C2FC3C /* RoundRect.m */,
+			);
+			name = Utility;
+			path = ../../sources/TableDesignRevisited/Classes/PageView/Utility;
+			sourceTree = "<group>";
+		};
 		ACF2BEA814A377AD0038F290 = {
 			isa = PBXGroup;
 			children = (
 				ACF2BEDA14A37FE80038F290 /* MSODataLib.xcodeproj */,
+				ACBD0E6D14BBAEAC00C2FC3C /* PageView */,
+				AC7CF87814BAFEE300AC5F92 /* ProgressHUD */,
 				ACF2BF1C14A3804C0038F290 /* OData */,
 				ACF2BEBD14A377AE0038F290 /* NerdDinner */,
 				ACF2BEB614A377AD0038F290 /* Frameworks */,
@@ -450,6 +582,8 @@
 				AC7CF86E14BAF8A700AC5F92 /* MathGraph.png in Resources */,
 				AC7CF86F14BAF8A700AC5F92 /* StarsBackground.png in Resources */,
 				AC7CF87014BAF8A700AC5F92 /* StarsForeground.png in Resources */,
+				ACBD0EEC14BBB01A00C2FC3C /* ButtonCell.xib in Resources */,
+				ACBD0EEF14BBB01A00C2FC3C /* NibCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +606,19 @@
 				AC30DBD614BAF28B00BA5751 /* CompositeSubviewBasedApplicationCell.m in Sources */,
 				AC30DBD714BAF28B00BA5751 /* HybridSubviewBasedApplicationCell.m in Sources */,
 				AC30DBD814BAF28B00BA5751 /* RatingView.m in Sources */,
+				AC7CF87314BAFBEE00AC5F92 /* MBProgressHUD.m in Sources */,
+				AC7CF87714BAFEDE00AC5F92 /* GradientButton.m in Sources */,
+				ACBD0EEB14BBB01A00C2FC3C /* ButtonCell.m in Sources */,
+				ACBD0EED14BBB01A00C2FC3C /* LabelCell+Selectable.m in Sources */,
+				ACBD0EEE14BBB01A00C2FC3C /* LabelCell.m in Sources */,
+				ACBD0EF014BBB01A00C2FC3C /* NibLoadedCell.m in Sources */,
+				ACBD0EF114BBB01A00C2FC3C /* TextFieldCell.m in Sources */,
+				ACBD0EF214BBB01A00C2FC3C /* GradientBackgroundTable.m in Sources */,
+				ACBD0EF314BBB01A00C2FC3C /* DetailDisclosureCell.m in Sources */,
+				ACBD0EF514BBB01A00C2FC3C /* PageCell.m in Sources */,
+				ACBD0EF614BBB01A00C2FC3C /* PageCellBackground.m in Sources */,
+				ACBD0EF714BBB01A00C2FC3C /* PageViewController.m in Sources */,
+				ACBD0EF814BBB01A00C2FC3C /* RoundRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

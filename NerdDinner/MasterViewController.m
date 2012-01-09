@@ -11,6 +11,7 @@
 //#import "DetailViewController.h"
 #import "MapViewController.h"
 
+//OData
 #import "WindowsCredential.h"
 #import "ACSCredential.h"
 #import "ACSUtil.h"
@@ -18,8 +19,10 @@
 #import "Tables.h"
 #import "ODataServiceException.h"
 #import "ODataXMlParser.h"
-
+//Service
 #import "NerdDinners.h"
+
+
 
 @implementation MasterViewController
 
@@ -65,6 +68,9 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
         NSLog(@"==Fine Dinner==");
 		
 	}
+    
+    HUD.detailsLabelText = [NSString stringWithFormat: @"Loading Complete"];
+    [HUD hide:YES afterDelay:1];
     listContent = resultArr;
     [self.tableView reloadData];
 }
@@ -109,7 +115,8 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 		
 		//[self updateProductObject];
 		//[self deleteProductObject];
-		[self retrieveDinners];
+        
+
 		
 		//[self addLink];
 		//[self setLink];
@@ -162,6 +169,23 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    if([listContent count] < 1)
+    {
+    
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        HUD.delegate = self;
+        HUD.labelText = @"Loading";
+        HUD.detailsLabelText = @"Loading Dinners...";
+        
+        //    [HUD showWhileExecuting:@selector(tryLogin) onTarget:self withObject:nil animated:YES];
+        [HUD show:YES];
+        
+        
+        [self retrieveDinners];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -226,7 +250,7 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     NerdDinner_Models_Dinner *dinner = nil;
@@ -240,6 +264,9 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
     }
 	
     cell.textLabel.text = [dinner getTitle];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss ZZZ"];
+    cell.detailTextLabel.text =  [dateFormat stringFromDate:[dinner getEventDate]];
     
 //	if([resultArray count] > 0 )
 //	{

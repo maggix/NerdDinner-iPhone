@@ -10,9 +10,19 @@
 #import <MapKit/MapKit.h>
 #import "NerdDinners.h"
 
-@interface MapAnnotationDefault : NSObject <MKAnnotation>
+@protocol GMAnnotation <MKAnnotation>
 
+@optional
+- (NSNumber *)annotationid;
+
+@end
+
+@interface MapAnnotationDefault : NSObject <GMAnnotation>
+{
+    NSNumber *annotationid;
+}
 @property (nonatomic, retain) NerdDinner_Models_Dinner *dinner;
+
 
 
 @end

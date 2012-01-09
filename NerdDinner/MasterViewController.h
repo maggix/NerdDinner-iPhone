@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 
+//ProgressHUD
+#import "MBProgressHUD.h"
+
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface MasterViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate>
 {
 //    NSArray *resultArray;
     
@@ -25,6 +28,9 @@
     NSString		*savedSearchTerm;
     NSInteger		savedScopeButtonIndex;
     BOOL			searchWasActive;
+    
+    //ProgressHUD
+    MBProgressHUD *HUD;
 }
 
 /* For LLVM 3.0

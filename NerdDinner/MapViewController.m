@@ -10,7 +10,7 @@
 #import "MapAnnotationDefault.h"
 
 
-
+/*
 //
 // Adapter category on NSDictionary to make it obey the MKAnnotation protocol
 //
@@ -20,6 +20,11 @@
 - (NSString *)title
 {
 	return [self objectForKey:@"title"];
+}
+
+- (NSNumber *)annotationid
+{
+    return [self objectForKey:@"id"];
 }
 
 - (NSString *)subtitle
@@ -35,7 +40,7 @@
 }
 
 @end
- 
+ */
 
 
 @implementation MapViewController
@@ -96,19 +101,25 @@
     for (NerdDinner_Models_Dinner *aResult in results)
 	{
        
-		NSDictionary *resultLocation = [NSDictionary dictionaryWithObjectsAndKeys:[aResult getLatitude],@"latitude",[aResult getLongitude],@"longitude",[aResult getTitle],@"title", [aResult getDescription], @"description", nil];//  [aResult objectForKey:@"stationLocation"];
+		//NSDictionary *resultLocation = [NSDictionary dictionaryWithObjectsAndKeys:[aResult getLatitude],@"latitude",[aResult getLongitude],@"longitude",[aResult getTitle],@"title", [aResult getDescription], @"description",[aResult getDinnerID], @"annotationid", nil];//  [aResult objectForKey:@"stationLocation"];
         //Per usare il Dictionary è necessario implementare 
         
-        //MapAnnotationDefault *resultAnnotation = [[[MapAnnotationDefault alloc] init] autorelease];
-        //resultAnnotation.dinner = aResult;
+        MapAnnotationDefault *resultAnnotation = [[MapAnnotationDefault alloc] init] ;
+        resultAnnotation.dinner = aResult;
+        [resultAnnotation retain];
 
+        [mapView addAnnotation:resultAnnotation];
          
-        //NSLog(@"resultlocation: %@",resultLocation);
-		if (resultLocation)
-		{
-			[mapView addAnnotation:(id<MKAnnotation>)resultLocation];
-            NSLog(@"Aggiunto annotazione %@", resultLocation);
-		}
+        if([aResult getDinnerID] == [selectedResult getDinnerID])
+        {
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([resultAnnotation coordinate] ,1000,1000);        
+            [mapView setRegion:region animated:YES];
+        }
+//		if (resultLocation)
+//		{
+//			[mapView addAnnotation:(id<MKAnnotation>)resultLocation];
+//            NSLog(@"Aggiunto annotazione %@", resultLocation);
+//		}
 	}
 }
 
@@ -161,25 +172,6 @@
 }
      */
 
-    /*
-- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
-{
-
-    static NSString *AnnotationViewID = @"annotationViewID";
-    
-    WeatherAnnotationView *annotationView =
-    (WeatherAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
-    if (annotationView == nil)
-    {
-        annotationView = [[[WeatherAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID] autorelease];
-    }
-    
-    annotationView.annotation = annotation;
-    
-    return annotationView;
-
-}
-     */
 /*
 - (MKAnnotationView *)mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -254,7 +246,7 @@
 }
 */
 
-- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <GMAnnotation>)annotation
 {
     
     // if it's the user location, just return nil.
@@ -262,9 +254,23 @@
         return nil;
     
     MKPinAnnotationView *newAnnotationPin = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"simpleAnnotation"] autorelease];
-    newAnnotationPin.pinColor = MKPinAnnotationColorGreen; // Or Red/Green
+    if([selectedResult getDinnerID] == [annotation annotationid])
+    {
+        newAnnotationPin.pinColor = MKPinAnnotationColorRed;
+    }
+    else
+    {
+        newAnnotationPin.pinColor = MKPinAnnotationColorGreen; // Or Red/Green
+    }
     newAnnotationPin.animatesDrop = YES;
     newAnnotationPin.canShowCallout = YES;
+    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [rightButton addTarget:self
+                    action:@selector(showDetails:)
+          forControlEvents:UIControlEventTouchUpInside];
+    newAnnotationPin.rightCalloutAccessoryView = rightButton;
+
+    
     return newAnnotationPin;
 }
 

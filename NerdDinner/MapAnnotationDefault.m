@@ -15,11 +15,11 @@
 - (CLLocationCoordinate2D)coordinate;
 {
     CLLocationCoordinate2D theCoordinate;
-    theCoordinate.latitude = [[dinner getLatitude] floatValue];
-    theCoordinate.longitude = [[dinner getLongitude] floatValue];
+    theCoordinate.latitude = [[dinner getLatitude] floatValue] ;
+    theCoordinate.longitude = [[dinner getLongitude] floatValue] ;
 //    theCoordinate.latitude = 37.786996;
 //    theCoordinate.longitude = -122.419281;   
-    NSLog(@"Latitude: %@, Longitude: %@", theCoordinate.latitude, theCoordinate.longitude);
+    NSLog(@"Latitude: %f, Longitude: %f", theCoordinate.latitude, theCoordinate.longitude);
     return theCoordinate; 
 }
 
@@ -33,6 +33,11 @@
 - (NSString *)subtitle
 {
     return [dinner getDescription];
+}
+
+- (NSNumber *)annotationid
+{
+    return [dinner getDinnerID];
 }
 
 - (void)dealloc
