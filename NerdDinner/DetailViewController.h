@@ -10,8 +10,16 @@
 
 @interface DetailViewController : UIViewController
 
+/* For LLVM 3.0
 @property (strong, nonatomic) id detailItem;
 
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+*/
+
+
+@property (nonatomic, retain) id detailItem;
+
+@property (nonatomic, retain) IBOutlet UILabel *detailDescriptionLabel;
+
 
 @end
