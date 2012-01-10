@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "MapAnnotationDefault.h"
+#import "LocationDetailViewController.h"
 
 
 /*
@@ -152,12 +153,11 @@
 
 #pragma mark Map View Delegate methods
 
-- (void)showDetails:(id)sender
+- (void)showDetails:(id)sender forAnnotation:(MKAnnotationView *)annotation
 {
     // the detail view does not want a toolbar so hide it
-    [self.navigationController setToolbarHidden:YES animated:NO];
-    
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    LocationDetailViewController *detailvc = [[LocationDetailViewController alloc] initWithDinner:[annotation dinner]];
+    [self.navigationController pushViewController:detailvc animated:YES];
 }
     /*
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
@@ -246,6 +246,35 @@
 }
 */
 
+/*
+//
+// mapView:didSelectAnnotationView:
+//
+// Changes the selectedResult to the annotation of the selected view and updates
+// the table
+//
+// Parameters:
+//    aMapView - the map view
+//    aView - the selected annotation view
+//
+- (void)mapView:(MKMapView *)aMapView didSelectAnnotationView:(MKAnnotationView *)aView
+{
+	[selectedResult autorelease];
+	selectedResult = [(NSDictionary *)[aView annotation] retain];
+    
+	[self updateTableForSelectedResult];
+}
+*/
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    MapAnnotationDefault *myAnnotation = (MapAnnotationDefault*)view.annotation;
+    LocationDetailViewController *ldvc = [[LocationDetailViewController alloc] initWithDinner:myAnnotation.dinner];
+    //[myAnnotation loadDetailView];
+    [self.navigationController pushViewController:ldvc animated:YES];
+    
+}
+
+
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <GMAnnotation>)annotation
 {
     
@@ -265,9 +294,9 @@
     newAnnotationPin.animatesDrop = YES;
     newAnnotationPin.canShowCallout = YES;
     UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [rightButton addTarget:self
-                    action:@selector(showDetails:)
-          forControlEvents:UIControlEventTouchUpInside];
+//    [rightButton addTarget:self
+//                    action:@selector(showDetails: forAnnotation:)
+//          forControlEvents:UIControlEventTouchUpInside];
     newAnnotationPin.rightCalloutAccessoryView = rightButton;
 
     

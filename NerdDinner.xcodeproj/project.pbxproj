@@ -39,6 +39,7 @@
 		ACBD0EF614BBB01A00C2FC3C /* PageCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EE514BBB01A00C2FC3C /* PageCellBackground.m */; };
 		ACBD0EF714BBB01A00C2FC3C /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EE714BBB01A00C2FC3C /* PageViewController.m */; };
 		ACBD0EF814BBB01A00C2FC3C /* RoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0EEA14BBB01A00C2FC3C /* RoundRect.m */; };
+		ACBD0F3A14BC2FE200C2FC3C /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0F3914BC2FE200C2FC3C /* LocationDetailViewController.m */; };
 		ACC7984014A392E700021C5B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC7983F14A392E700021C5B /* CoreLocation.framework */; };
 		ACC7984214A392ED00021C5B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC7984114A392ED00021C5B /* MapKit.framework */; };
 		ACC7984614A3930200021C5B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC7984414A3930100021C5B /* MapViewController.m */; };
@@ -121,6 +122,8 @@
 		ACBD0EE714BBB01A00C2FC3C /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		ACBD0EE914BBB01A00C2FC3C /* RoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundRect.h; sourceTree = "<group>"; };
 		ACBD0EEA14BBB01A00C2FC3C /* RoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRect.m; sourceTree = "<group>"; };
+		ACBD0F3814BC2FE200C2FC3C /* LocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailViewController.h; sourceTree = "<group>"; };
+		ACBD0F3914BC2FE200C2FC3C /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
 		ACC7983F14A392E700021C5B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ACC7984114A392ED00021C5B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ACC7984314A3930100021C5B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				ACF2BECA14A377AE0038F290 /* MasterViewController.m */,
 				ACF2BECC14A377AE0038F290 /* DetailViewController.h */,
 				ACF2BECD14A377AE0038F290 /* DetailViewController.m */,
+				ACBD0F3814BC2FE200C2FC3C /* LocationDetailViewController.h */,
+				ACBD0F3914BC2FE200C2FC3C /* LocationDetailViewController.m */,
 				ACC7984314A3930100021C5B /* MapViewController.h */,
 				ACC7984414A3930100021C5B /* MapViewController.m */,
 				AC30DBC714BAF19400BA5751 /* IndividualSubviewsBasedApplicationCell.xib */,
@@ -619,6 +624,7 @@
 				ACBD0EF614BBB01A00C2FC3C /* PageCellBackground.m in Sources */,
 				ACBD0EF714BBB01A00C2FC3C /* PageViewController.m in Sources */,
 				ACBD0EF814BBB01A00C2FC3C /* RoundRect.m in Sources */,
+				ACBD0F3A14BC2FE200C2FC3C /* LocationDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
