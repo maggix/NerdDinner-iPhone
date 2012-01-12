@@ -46,7 +46,7 @@
 
 @implementation MapViewController
 @synthesize mapView;
-@synthesize detailViewController;
+@synthesize buttonLat, buttonLon;
 
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -61,7 +61,7 @@
 
 - (id)initWithSelectedResult:(NerdDinner_Models_Dinner *)aResult
                   allResults:(NSArray *)allResults{
-    self = [super init];
+    self = [super initWithNibName:@"MapViewController" bundle:[NSBundle mainBundle]];
     if (self) {
         selectedResult = [aResult retain];
 		results = [allResults retain];
@@ -97,6 +97,10 @@
 //    for (id<MKAnnotation> annotation in mapView.annotations) {
 //        [mapView removeAnnotation:annotation];
 //    }
+    
+    self.title = [selectedResult getTitle];
+    self.buttonLat.title = [NSString stringWithFormat:@"Lat %.3f", [[selectedResult getLatitude] floatValue]];
+    self.buttonLon.title = [NSString stringWithFormat:@"Lon %.3f", [[selectedResult getLongitude] floatValue]];
     
     // Do any additional setup after loading the view from its nib.
     for (NerdDinner_Models_Dinner *aResult in results)
@@ -153,7 +157,7 @@
 
 #pragma mark Map View Delegate methods
 
-- (void)showDetails:(id)sender forAnnotation:(MKAnnotationView *)annotation
+- (void)showDetails:(id)sender forAnnotation:(MKAnnotationView <GMAnnotation> *)annotation
 {
     // the detail view does not want a toolbar so hide it
     LocationDetailViewController *detailvc = [[LocationDetailViewController alloc] initWithDinner:[annotation dinner]];
@@ -213,12 +217,18 @@
 }
  */
 
+///
+///
+//TODO: update map when moved or zoomed. Do not reload mapview everytime!
+///
+///
+
 
 /*
 //http://www.highoncoding.com/Articles/804_Introduction_to_MapKit_Framework_for_iPhone_Development.aspx
 - (void)mapView:(MKMapView *)mv didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    CLLocationCoordinate2D userCoordinate = userLocation.location.coordinate; 
+        CLLocationCoordinate2D userCoordinate = userLocation.location.coordinate; 
     
     for(int i = 1; i<=5;i++) 
     {
@@ -232,7 +242,7 @@
         
     }
 }
- */
+*/
 
 /*
  //Se si usa questo metodo, usare UNA SOLA ANNOTATION per l'intera mappa

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "NerdDinners.h"
-#import "DetailViewController.h"
 
 
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
@@ -24,11 +23,10 @@
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
-@property (nonatomic, retain) DetailViewController *detailViewController;
-
-
 - (id)initWithSelectedResult:(NerdDinner_Models_Dinner *)aResult
                   allResults:(NSArray *)allResults;
 
+@property (nonatomic,retain) IBOutlet UIBarButtonItem *buttonLat;
+@property (nonatomic,retain) IBOutlet UIBarButtonItem *buttonLon;
 
 @end

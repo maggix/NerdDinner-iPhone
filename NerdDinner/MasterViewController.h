@@ -12,6 +12,9 @@
 //ProgressHUD
 #import "MBProgressHUD.h"
 
+//Cells
+#import "ApplicationCell.h"
+
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, MBProgressHUDDelegate>
@@ -31,6 +34,11 @@
     
     //ProgressHUD
     MBProgressHUD *HUD;
+    
+    //Cells
+  	ApplicationCell *tmpCell;
+    // referring to our xib-based UITableViewCell ('IndividualSubviewsBasedApplicationCell')
+	UINib *cellNib;
 }
 
 /* For LLVM 3.0
@@ -52,7 +60,9 @@
 
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedControlTopBar;
 
-
+//Cells
+@property (nonatomic, retain) IBOutlet ApplicationCell *tmpCell;
+@property (nonatomic, retain) UINib *cellNib;
 
 
 @end

@@ -22,6 +22,23 @@
 //Service
 #import "NerdDinners.h"
 
+//Cells
+#import "ApplicationCell.h"
+#import "CompositeSubviewBasedApplicationCell.h"
+#import "HybridSubviewBasedApplicationCell.h"
+
+// Define one of the following macros to 1 to control which type of cell will be used.
+#define USE_INDIVIDUAL_SUBVIEWS_CELL    1	// use a xib file defining the cell
+#define USE_COMPOSITE_SUBVIEW_CELL      0	// use a single view to draw all the content
+#define USE_HYBRID_CELL                 0	// use a single view to draw most of the content + separate label to render the rest of the content
+
+
+/*
+ Predefined colors to alternate the background color of each cell row by row
+ (see tableView:cellForRowAtIndexPath: and tableView:willDisplayCell:forRowAtIndexPath:).
+ */
+#define DARK_BACKGROUND  [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0]
+#define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0]
 
 
 @implementation MasterViewController
@@ -32,10 +49,15 @@
 @synthesize listContent, filteredListContent;
 @synthesize savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 @synthesize segmentedControlTopBar;
+@synthesize tmpCell, cellNib;
 
 
 
 NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
+
+//query con parametri
+//http://nerddinner.com/Services/OData.svc/Dinners?$top=200&$skip=150&$orderby=EventDate%20desc
+//http://www.odata.org/developers/protocols/uri-conventions
 
 - (void) onAfterReceive:(HttpResponse*)response
 {
@@ -49,10 +71,13 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 	NSLog(@"retriving dinners....");
 	NerdDinners *proxy=[[NerdDinners alloc]initWithUri:dinnerURI credential:nil];
 	
-	DataServiceQuery *query = [proxy dinners];
-	//[query top:1];
-	QueryOperationResponse *response = [query execute];
-	NSArray *resultArr =[[response getResult] retain];
+//	DataServiceQuery *query = [proxy dinners];
+//	//[query top:1];
+//	QueryOperationResponse *response = [query execute];
+//	NSArray *resultArr =[[response getResult] retain];
+//    NSArray *resultArr = [[proxy FindUpcomingDinners] retain]; //??? Returns no results as of 2012-01-12
+    NSArray *resultArr =[[proxy GetMostRecentDinners] retain]; //Method with custom OData Query
+    [[resultArr reverseObjectEnumerator] allObjects]; //Reversed order if I use my own query
 	NSLog(@"resultarray...%d",[resultArr count]);
 	for (int i =0;i<[resultArr count]; i++) {
 		
@@ -107,49 +132,41 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    @try 
-	{
-		//[self checkForInnerError];
-		//uncomment to products
-		//[self addProductObject];
-		
-		//[self updateProductObject];
-		//[self deleteProductObject];
+    
+    // Configure the table view.
+    self.tableView.rowHeight = 73.0;
+    self.tableView.backgroundColor = DARK_BACKGROUND;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.searchDisplayController.searchResultsTableView.rowHeight = 73.0;
+    self.searchDisplayController.searchResultsTableView.backgroundColor = DARK_BACKGROUND;
+    self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    //TODO: check functioning
+    [self.navigationController.navigationBar addSubview:segmentedControlTopBar];
+    
+    // create our UINib instance which will later help us load and instanciate the
+	// UITableViewCells's UI via a xib file.
+	//
+	// Note:
+	// The UINib classe provides better performance in situations where you want to create multiple
+	// copies of a nib file’s contents. The normal nib-loading process involves reading the nib file
+	// from disk and then instantiating the objects it contains. However, with the UINib class, the
+	// nib file is read from disk once and the contents are stored in memory.
+	// Because they are in memory, creating successive sets of objects takes less time because it
+	// does not require accessing the disk.
+	//
+	self.cellNib = [UINib nibWithNibName:@"IndividualSubviewsBasedApplicationCell" bundle:nil];
+    
+    // restore search settings if they were saved in didReceiveMemoryWarning.
+    if (self.savedSearchTerm)
+    {
+        [self.searchDisplayController setActive:self.searchWasActive];
+        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+        [self.searchDisplayController.searchBar setText:savedSearchTerm];
         
+        self.savedSearchTerm = nil;
+    }
 
-		
-		//[self addLink];
-		//[self setLink];
-		//[self deleteLink];
-		
-		//[self functionImport];
-        
-        [self.navigationController.navigationBar addSubview:segmentedControlTopBar];
-        
-        // restore search settings if they were saved in didReceiveMemoryWarning.
-        if (self.savedSearchTerm)
-        {
-            [self.searchDisplayController setActive:self.searchWasActive];
-            [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
-            [self.searchDisplayController.searchBar setText:savedSearchTerm];
-            
-            self.savedSearchTerm = nil;
-        }
-		
-	}
-	@catch (DataServiceRequestException * e) 
-	{
-		NSLog(@"exception = %@,  innerExceptiom= %@",[e name],[[e getResponse] getError]);
-	}	
-	@catch (ODataServiceException * e) 
-	{
-		NSLog(@"exception = %@,  \nDetailedError = %@",[e name],[e getDetailedError]);
-		
-	}	
-	@catch (NSException * e) 
-	{
-		NSLog(@"exception = %@, %@",[e name],[e reason]);
-	}	
 }
 
 - (void)viewDidUnload
@@ -183,8 +200,42 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
         //    [HUD showWhileExecuting:@selector(tryLogin) onTarget:self withObject:nil animated:YES];
         [HUD show:YES];
         
+        @try 
+        {
+            //[self checkForInnerError];
+            //uncomment to products
+            //[self addProductObject];
+            
+            //[self updateProductObject];
+            //[self deleteProductObject];
+            
+            
+            [self retrieveDinners];
+            
+            self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
+            
+            //[self addLink];
+            //[self setLink];
+            //[self deleteLink];
+            
+            //[self functionImport];
+            
+        }
+        @catch (DataServiceRequestException * e) 
+        {
+            NSLog(@"exception = %@,  innerExceptiom= %@",[e name],[[e getResponse] getError]);
+        }	
+        @catch (ODataServiceException * e) 
+        {
+            NSLog(@"exception = %@,  \nDetailedError = %@",[e name],[e getDetailedError]);
+            
+        }	
+        @catch (NSException * e) 
+        {
+            NSLog(@"exception = %@, %@",[e name],[e reason]);
+        }	
         
-        [self retrieveDinners];
+
     }
 }
 
@@ -246,6 +297,7 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
     return cell;
      */
     
+    /*
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -275,6 +327,65 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 //		//cell.textLabel.text = [t getShortName];
 //	}
 	return cell;
+     */
+    
+    static NSString *CellIdentifier = @"ApplicationCell";
+    
+    ApplicationCell *cell = (ApplicationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
+    if (cell == nil)
+    {
+#if USE_INDIVIDUAL_SUBVIEWS_CELL
+        [self.cellNib instantiateWithOwner:self options:nil];
+		cell = tmpCell;
+		self.tmpCell = nil;
+		
+#elif USE_COMPOSITE_SUBVIEW_CELL
+        cell = [[[CompositeSubviewBasedApplicationCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                            reuseIdentifier:CellIdentifier] autorelease];
+		
+#elif USE_HYBRID_CELL
+        cell = [[[HybridSubviewBasedApplicationCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                         reuseIdentifier:CellIdentifier] autorelease];
+#endif
+    }
+    
+	// Display dark and light background in alternate rows -- see tableView:willDisplayCell:forRowAtIndexPath:.
+    cell.useDarkBackground = (indexPath.row % 2 == 0);
+	
+    
+    //Get data
+    NerdDinner_Models_Dinner *dinner = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        dinner = [self.filteredListContent objectAtIndex:indexPath.row];
+    }
+	else
+	{
+        dinner = [self.listContent objectAtIndex:indexPath.row];
+    }
+	    
+	// Configure the data for the cell.
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+//    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+//    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    cell.icon = [UIImage imageNamed:@"Dinner"];
+    cell.publisher = [dinner getHostedBy];
+    cell.name = [dinner getTitle];
+    cell.numRatings = [[dinner getRSVPs] count]; //TODO: get RSVPs correctly
+    cell.rating = 1.0f; //TODO: calculate rating based on RSVPs
+    cell.price = [dateFormat stringFromDate:[dinner getEventDate]];
+	
+    //[f release];
+    [dateFormat release];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = ((ApplicationCell *)cell).useDarkBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
 }
 
 /*
@@ -359,12 +470,12 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 	 */
 	for (NerdDinner_Models_Dinner *dinner in listContent)
 	{
-        NSComparisonResult result0 = [[dinner getTitle] compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-        NSComparisonResult result1 = [[dinner getDescription] compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-        if (result0 == NSOrderedSame || result1 == NSOrderedSame)
+        
+        if([[dinner getTitle] rangeOfString:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)].location != NSNotFound)
         {
             [self.filteredListContent addObject:dinner];
         }
+
         /*
 		if ([scope isEqualToString:@"All"])
 		{

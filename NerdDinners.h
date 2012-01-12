@@ -255,6 +255,7 @@
 
 - (id) init;
 - (id) initWithUri:(NSString*)anUri credential:(id)acredential;
+- (NSArray *) GetMostRecentDinners; //GM
 - (NSArray *) FindUpcomingDinners;
 - (NSArray *) DinnersNearMeWithplaceorzip:(NSString *)placeOrZip;
 - (id) dinners;

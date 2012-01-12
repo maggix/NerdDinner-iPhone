@@ -149,6 +149,15 @@
 /*
  * Method for service operation
  */
+- (NSArray *) GetMostRecentDinners
+{
+	NSString *aQuery=[self prepareQuery:@"Dinners?$orderby=EventDate%20desc" parameters:nil];
+	return [self executeServiceOperation:aQuery httpMethod:@"GET" isReturnTypeCollection:YES];
+}
+
+/*
+ * Method for service operation
+ */
 - (NSArray *) FindUpcomingDinners
 {
 	NSString *aQuery=[self prepareQuery:@"FindUpcomingDinners" parameters:nil];

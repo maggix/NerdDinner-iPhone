@@ -8,6 +8,8 @@
 
 #import "LocationDetailViewController.h"
 #import "TextFieldCell.h"
+#import "DetailDisclosureCell.h"
+#import "NibLoadedCell.h"
 
 @implementation LocationDetailViewController
 @synthesize selectedDinner;
@@ -56,11 +58,17 @@
     
     self.title = NSLocalizedString(@"Dinner Details", @"");
     
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
    	[self addSectionAtIndex:0 withAnimation:UITableViewRowAnimationNone];
-
-    [self appendRowToSection:0 cellClass:[TextFieldCell class] 
+    [self appendRowToSection:0 cellClass:[NibLoadedCell class] cellData:[selectedDinner getTitle] withAnimation:UITableViewRowAnimationNone];
+    
+    
+    [self addSectionAtIndex:1 withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
                     cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
-                              NSLocalizedString(@"Title", @""),
+                              NSLocalizedString(@"Where", @""),
                               @"label",
                               [NSString stringWithFormat:@"%@",[selectedDinner getTitle] ], @"value",
                               NSLocalizedString(@"Value goes here", @""),
@@ -69,6 +77,131 @@
                               @"editable",
                               nil]
                withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"When", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getEventDate] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];  //TODO: format date
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Latitude", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getLatitude] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Longitude", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getLongitude] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"ID", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getDinnerID] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Hosted By", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getHostedBy] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Description", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getDescription] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Phone", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getContactPhone] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Hosted by ID", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getHostedById] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Address", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getAddress] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[TextFieldCell class] 
+                    cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              NSLocalizedString(@"Country", @""),
+                              @"label",
+                              [NSString stringWithFormat:@"%@",[selectedDinner getCountry] ], @"value",
+                              NSLocalizedString(@"Value goes here", @""),
+                              @"placeholder", 
+                              NO, 
+                              @"editable",
+                              nil]
+               withAnimation:UITableViewRowAnimationNone];
+    [self appendRowToSection:1 cellClass:[DetailDisclosureCell class] 
+                    cellData: [NSMutableDictionary dictionaryWithObjectsAndKeys: 
+                               NSLocalizedString(@"View RSVPs",@""),
+                               @"label",
+                               @"", 
+                               @"action",
+                               nil] 
+               withAnimation:UITableViewRowAnimationNone]; //TODO: Show RSVPs
+
+
+
+
+
+    
+    [dateFormat release];
 }
 
 - (NSString *)tableView:(UITableView *)aTableView

@@ -14,6 +14,7 @@
 
 @optional
 - (NSNumber *)annotationid;
+- (NerdDinner_Models_Dinner *)dinner;
 
 @end
 
