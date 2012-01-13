@@ -62,9 +62,14 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     
    	[self addSectionAtIndex:0 withAnimation:UITableViewRowAnimationNone];
-    [self appendRowToSection:0 cellClass:[NibLoadedCell class] cellData:[selectedDinner getTitle] withAnimation:UITableViewRowAnimationNone];
-    
-    
+    [self appendRowToSection:0 cellClass:[NibLoadedCell class] 
+                    cellData:[NSDictionary dictionaryWithObjectsAndKeys:
+                              [selectedDinner getTitle],@"labelText",
+                              [NSString stringWithString:@"Dinner"],@"imageName", //No primitive types in NSDictionary objects
+                              NSLocalizedString(@"Title", @"Title Label"),@"titleLabelText", 
+                              nil] 
+               withAnimation:UITableViewRowAnimationNone];
+
     [self addSectionAtIndex:1 withAnimation:UITableViewRowAnimationNone];
     [self appendRowToSection:1 cellClass:[TextFieldCell class] 
                     cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -87,7 +92,7 @@
                               NO, 
                               @"editable",
                               nil]
-               withAnimation:UITableViewRowAnimationNone];  //TODO: format date
+               withAnimation:UITableViewRowAnimationNone];
     [self appendRowToSection:1 cellClass:[TextFieldCell class] 
                     cellData:[NSMutableDictionary dictionaryWithObjectsAndKeys:
                               NSLocalizedString(@"Latitude", @""),
@@ -202,6 +207,7 @@
 
     
     [dateFormat release];
+
 }
 
 - (NSString *)tableView:(UITableView *)aTableView
@@ -209,11 +215,11 @@ titleForHeaderInSection:(NSInteger)section
 {
 	if (section == 0)
 	{
-		return NSLocalizedString(@"Main info", nil);
+		return NSLocalizedString(@"", nil);
 	}
 	else if (section == 1)
 	{
-		return NSLocalizedString(@"Rows loaded from NIBs", nil);
+		return NSLocalizedString(@"Detailed Info", nil);
 	}
 	else if (section == 2)
 	{

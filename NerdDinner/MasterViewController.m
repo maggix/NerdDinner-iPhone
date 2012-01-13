@@ -68,35 +68,53 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 
 -(void) retrieveDinners
 {
-	NSLog(@"retriving dinners....");
-	NerdDinners *proxy=[[NerdDinners alloc]initWithUri:dinnerURI credential:nil];
-	
-//	DataServiceQuery *query = [proxy dinners];
-//	//[query top:1];
-//	QueryOperationResponse *response = [query execute];
-//	NSArray *resultArr =[[response getResult] retain];
-//    NSArray *resultArr = [[proxy FindUpcomingDinners] retain]; //??? Returns no results as of 2012-01-12
-    NSArray *resultArr =[[proxy GetMostRecentDinners] retain]; //Method with custom OData Query
-    [[resultArr reverseObjectEnumerator] allObjects]; //Reversed order if I use my own query
-	NSLog(@"resultarray...%d",[resultArr count]);
-	for (int i =0;i<[resultArr count]; i++) {
-		
-		NerdDinner_Models_Dinner *p = [resultArr objectAtIndex:i];
-		NSLog(@"=== Dinner %d  ===",i);
-		NSLog(@"dinner id...%@",[[p getDinnerID] stringValue]);
-		NSLog(@"dinner name...%@",[p getTitle]);
-		NSLog(@"dinner desc......%@",[p getDescription]);
-		NSLog(@"Date..%@",[p getEventDate]);
-//		NSLog(@"Type..%@",[p getDinnerType]);
-        NSLog(@"Latitude..%@",[p getLatitude]);
-        NSLog(@"Longitude..%@",[p getLongitude]);
-        NSLog(@"==Fine Dinner==");
-		
-	}
+    @try{
+    
+        NSLog(@"retriving dinners....");
+        NerdDinners *proxy=[[NerdDinners alloc]initWithUri:dinnerURI credential:nil];
+        
+    //	DataServiceQuery *query = [proxy dinners];
+    //	//[query top:1];
+    //	QueryOperationResponse *response = [query execute];
+    //	NSArray *resultArr =[[response getResult] retain];
+    //    NSArray *resultArr = [[proxy FindUpcomingDinners] retain]; //??? Returns no results as of 2012-01-12
+        NSArray *resultArr =[[proxy GetMostRecentDinners] retain]; //Method with custom OData Query
+        [[resultArr reverseObjectEnumerator] allObjects]; //Reversed order if I use my own query
+        NSLog(@"resultarray...%d",[resultArr count]);
+        for (int i =0;i<[resultArr count]; i++) {
+            
+            NerdDinner_Models_Dinner *p = [resultArr objectAtIndex:i];
+            NSLog(@"=== Dinner %d  ===",i);
+            NSLog(@"dinner id...%@",[[p getDinnerID] stringValue]);
+            NSLog(@"dinner name...%@",[p getTitle]);
+            NSLog(@"dinner desc......%@",[p getDescription]);
+            NSLog(@"Date..%@",[p getEventDate]);
+    //		NSLog(@"Type..%@",[p getDinnerType]);
+            NSLog(@"Latitude..%@",[p getLatitude]);
+            NSLog(@"Longitude..%@",[p getLongitude]);
+            NSLog(@"==Fine Dinner==");
+            
+        }
+        self.listContent = resultArr;
+        self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
+    }
+    @catch (DataServiceRequestException * e) 
+    {
+        NSLog(@"exception = %@,  innerExceptiom= %@",[e name],[[e getResponse] getError]);
+    }	
+    @catch (ODataServiceException * e) 
+    {
+        NSLog(@"exception = %@,  \nDetailedError = %@",[e name],[e getDetailedError]);
+        
+    }	
+    @catch (NSException * e) 
+    {
+        NSLog(@"exception = %@, %@",[e name],[e reason]);
+    }
     
     HUD.detailsLabelText = [NSString stringWithFormat: @"Loading Complete"];
     [HUD hide:YES afterDelay:1];
-    listContent = resultArr;
+    
     [self.tableView reloadData];
 }
 
@@ -197,9 +215,10 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
         HUD.labelText = @"Loading";
         HUD.detailsLabelText = @"Loading Dinners...";
         
-        //    [HUD showWhileExecuting:@selector(tryLogin) onTarget:self withObject:nil animated:YES];
-        [HUD show:YES];
+        [HUD showWhileExecuting:@selector(retrieveDinners) onTarget:self withObject:nil animated:YES];
+        //[HUD show:YES];
         
+        /*
         @try 
         {
             //[self checkForInnerError];
@@ -234,6 +253,7 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
         {
             NSLog(@"exception = %@, %@",[e name],[e reason]);
         }	
+         */
         
 
     }
