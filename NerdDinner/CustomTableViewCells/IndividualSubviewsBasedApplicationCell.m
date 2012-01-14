@@ -68,9 +68,9 @@
     iconView.image = newIcon;
 }
 
-- (void)setPublisher:(NSString *)newPublisher
+- (void)setDinnerTitle:(NSString *)newPublisher
 {
-    [super setPublisher:newPublisher];
+    [super setDinnerTitle:newPublisher];
     publisherLabel.text = newPublisher;
 }
 
@@ -80,9 +80,9 @@
     ratingView.rating = newRating;
 }
 
-- (void)setNumRatings:(NSInteger)newNumRatings
+- (void)setNumRSVPs:(NSInteger)newNumRatings
 {
-    [super setNumRatings:newNumRatings];
+    [super setNumRSVPs:newNumRatings];
     numRatingsLabel.text = [NSString stringWithFormat:@"%d Ratings", newNumRatings];
 }
 
@@ -92,9 +92,9 @@
     nameLabel.text = newName;
 }
 
-- (void)setPrice:(NSString *)newPrice
+- (void)setDate:(NSString *)newPrice
 {
-    [super setPrice:newPrice];
+    [super setDate:newPrice];
     priceLabel.text = newPrice;
 }
 

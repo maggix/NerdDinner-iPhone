@@ -42,14 +42,14 @@
  POSSIBILITY OF SUCH DAMAGE. 
   
  Copyright (C) 2011 Apple Inc. All Rights Reserved. 
-  
+ 
  */
 
 #import "ApplicationCell.h"
 
 @implementation ApplicationCell
 
-@synthesize useDarkBackground, icon, publisher, name, rating, numRatings, price;
+@synthesize useDarkBackground, icon, dinnerTitle, name, rating, numRSVPs, date;
 
 - (void)setUseDarkBackground:(BOOL)flag
 {
@@ -68,9 +68,9 @@
 - (void)dealloc
 {
     [icon release];
-    [publisher release];
+    [dinnerTitle release];
     [name release];
-    [price release];
+    [date release];
     
     [super dealloc];
 }

@@ -3,7 +3,7 @@
 //  NerdDinner
 //
 //  Created by Giovanni Maggini on 22/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Giovanni Maggini. All rights reserved.
 //
 
 #import "MasterViewController.h"
@@ -69,8 +69,10 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 -(void) retrieveDinners
 {
     @try{
-    
+        
+#if DEBUG
         NSLog(@"retriving dinners....");
+#endif
         NerdDinners *proxy=[[NerdDinners alloc]initWithUri:dinnerURI credential:nil];
         
     //	DataServiceQuery *query = [proxy dinners];
@@ -80,10 +82,13 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
     //    NSArray *resultArr = [[proxy FindUpcomingDinners] retain]; //??? Returns no results as of 2012-01-12
         NSArray *resultArr =[[proxy GetMostRecentDinners] retain]; //Method with custom OData Query
         [[resultArr reverseObjectEnumerator] allObjects]; //Reversed order if I use my own query
+#if DEBUG
         NSLog(@"resultarray...%d",[resultArr count]);
+#endif
         for (int i =0;i<[resultArr count]; i++) {
             
             NerdDinner_Models_Dinner *p = [resultArr objectAtIndex:i];
+#if DEBUG
             NSLog(@"=== Dinner %d  ===",i);
             NSLog(@"dinner id...%@",[[p getDinnerID] stringValue]);
             NSLog(@"dinner name...%@",[p getTitle]);
@@ -93,8 +98,9 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
             NSLog(@"Latitude..%@",[p getLatitude]);
             NSLog(@"Longitude..%@",[p getLongitude]);
             NSLog(@"==Fine Dinner==");
-            
+#endif   
         }
+
         self.listContent = resultArr;
         self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
     }
@@ -391,11 +397,11 @@ NSString *dinnerURI = @"http://www.nerddinner.com/Services/OData.svc/";
 //    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
 //    [f setNumberStyle:NSNumberFormatterDecimalStyle];
     cell.icon = [UIImage imageNamed:@"Dinner"];
-    cell.publisher = [dinner getHostedBy];
+    cell.dinnerTitle = [dinner getHostedBy];
     cell.name = [dinner getTitle];
-    cell.numRatings = [[dinner getRSVPs] count]; //TODO: get RSVPs correctly
+    cell.numRSVPs = [[dinner getRSVPs] count]; //TODO: get RSVPs correctly
     cell.rating = 1.0f; //TODO: calculate rating based on RSVPs
-    cell.price = [dateFormat stringFromDate:[dinner getEventDate]];
+    cell.date = [dateFormat stringFromDate:[dinner getEventDate]];
 	
     //[f release];
     [dateFormat release];

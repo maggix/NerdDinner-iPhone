@@ -1,7 +1,7 @@
 /*
-     File: ApplicationCell.h
- Abstract: The abstract superclass of the three cell classes used to display the content.
-  Version: 1.5
+ File: CompositeSubviewBasedApplicationCell.h
+ Abstract: The subclass of ApplicationCell that uses a single view to draw the content.
+ Version: 1.5
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -53,20 +53,20 @@
     BOOL useDarkBackground;
 
     UIImage *icon;
-    NSString *publisher;
+    NSString *dinnerTitle;
     NSString *name;
     float rating;
-    NSInteger numRatings;
-    NSString *price;
+    NSInteger numRSVPs;
+    NSString *date;
 }
 
 @property(nonatomic) BOOL useDarkBackground;
 
 @property(retain) UIImage *icon;
-@property(retain) NSString *publisher;
+@property(retain) NSString *dinnerTitle;
 @property(retain) NSString *name;
 @property float rating;
-@property NSInteger numRatings;
-@property(retain) NSString *price;
+@property NSInteger numRSVPs;
+@property(retain) NSString *date;
 
 @end

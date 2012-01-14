@@ -80,12 +80,12 @@
     [_cell.name drawAtPoint:CGPointMake(81.0, 22.0) withFont:[UIFont boldSystemFontOfSize:17.0]];
     
     _highlighted ? [[UIColor whiteColor] set] : [[UIColor colorWithWhite:0.23 alpha:1.0] set];
-    [_cell.publisher drawAtPoint:CGPointMake(81.0, 8.0) withFont:[UIFont boldSystemFontOfSize:11.0]];
+    [_cell.dinnerTitle drawAtPoint:CGPointMake(81.0, 8.0) withFont:[UIFont boldSystemFontOfSize:11.0]];
     
-    [[NSString stringWithFormat:@"%d Ratings", _cell.numRatings] drawAtPoint:CGPointMake(157.0, 46.0) withFont:[UIFont systemFontOfSize:11.0]];
+    [[NSString stringWithFormat:@"%d Ratings", _cell.numRSVPs] drawAtPoint:CGPointMake(157.0, 46.0) withFont:[UIFont systemFontOfSize:11.0]];
     
-    CGSize priceSize = [_cell.price sizeWithFont:[UIFont boldSystemFontOfSize:11.0]];
-    [_cell.price drawAtPoint:CGPointMake(self.bounds.size.width - priceSize.width - 8.0, 28.0) withFont:[UIFont boldSystemFontOfSize:11.0]];
+    CGSize priceSize = [_cell.date sizeWithFont:[UIFont boldSystemFontOfSize:11.0]];
+    [_cell.date drawAtPoint:CGPointMake(self.bounds.size.width - priceSize.width - 8.0, 28.0) withFont:[UIFont boldSystemFontOfSize:11.0]];
     
     CGPoint ratingImageOrigin = CGPointMake(81.0, 45.0);
     UIImage *ratingBackgroundImage = [UIImage imageNamed:@"StarsBackground.png"];

@@ -3,7 +3,7 @@
 //  NerdDinner
 //
 //  Created by Giovanni Maggini on 22/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Giovanni Maggini. All rights reserved.
 //
 
 #import "MapViewController.h"
@@ -118,7 +118,8 @@
         if([aResult getDinnerID] == [selectedResult getDinnerID])
         {
             MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([resultAnnotation coordinate] ,1000,1000);        
-            [mapView setRegion:region animated:YES];
+            MKCoordinateRegion adjustedRegion = [mapView regionThatFits:region];  
+            [mapView setRegion:adjustedRegion animated:YES];
         }
 //		if (resultLocation)
 //		{
@@ -307,6 +308,11 @@
 //    [rightButton addTarget:self
 //                    action:@selector(showDetails: forAnnotation:)
 //          forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *dinnerIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Dinner"]];
+    [dinnerIconView setFrame:CGRectMake(0, 0, 30, 30)];
+    newAnnotationPin.leftCalloutAccessoryView = dinnerIconView; 
+    [dinnerIconView release];    
+    
     newAnnotationPin.rightCalloutAccessoryView = rightButton;
 
     

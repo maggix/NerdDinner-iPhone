@@ -3,7 +3,7 @@
 //  NerdDinner
 //
 //  Created by Giovanni Maggini on 10/01/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Giovanni Maggini. All rights reserved.
 //
 
 #import "LocationDetailViewController.h"
@@ -51,12 +51,27 @@
 */
 
 
+-(void)addRSVP:(id)sender;
+{
+    //TODO: work in progress
+    NSLog(@"Work in progress to add RSVP");
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Dinner Details", @"");
+    
+
+    UIBarButtonItem *addButton =
+    [[[UIBarButtonItem alloc]
+      initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+      target:self
+      action:@selector(addRSVP:)]
+     autorelease];
+    self.navigationItem.rightBarButtonItem = addButton;
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
@@ -197,9 +212,9 @@
                                NSLocalizedString(@"View RSVPs",@""),
                                @"label",
                                @"", 
-                               @"action",
+                               @"action", //TODO: Show RSVPs
                                nil] 
-               withAnimation:UITableViewRowAnimationNone]; //TODO: Show RSVPs
+               withAnimation:UITableViewRowAnimationNone]; 
 
 
 

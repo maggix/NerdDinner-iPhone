@@ -18,7 +18,8 @@
 		AC66CE5214BF9E860098E1F1 /* StarsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66CE4E14BF9E860098E1F1 /* StarsBackground.png */; };
 		AC66CE5314BF9E860098E1F1 /* StarsForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66CE4F14BF9E860098E1F1 /* StarsForeground.png */; };
 		AC66CE5514BF9E9F0098E1F1 /* IndividualSubviewsBasedApplicationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC66CE5414BF9E9F0098E1F1 /* IndividualSubviewsBasedApplicationCell.xib */; };
-		AC7CF86B14BAF8A700AC5F92 /* Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7CF86114BAF8A700AC5F92 /* Dinner.png */; };
+		AC66CED514C21E500098E1F1 /* License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AC66CED414C21E4F0098E1F1 /* License.rtf */; };
+		AC66CED714C222470098E1F1 /* Dinner.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66CED614C222470098E1F1 /* Dinner.png */; };
 		AC7CF87314BAFBEE00AC5F92 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */; };
 		AC7CF87714BAFEDE00AC5F92 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CF87614BAFEDD00AC5F92 /* GradientButton.m */; };
 		ACBD0EEB14BBB01A00C2FC3C /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ECE14BBB01A00C2FC3C /* ButtonCell.m */; };
@@ -50,7 +51,6 @@
 		ACF2BEC814A377AE0038F290 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BEC714A377AE0038F290 /* AppDelegate.m */; };
 		ACF2BECB14A377AE0038F290 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BECA14A377AE0038F290 /* MasterViewController.m */; };
 		ACF2BED114A377AE0038F290 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF2BECF14A377AE0038F290 /* MasterViewController.xib */; };
-		ACF2BED414A377AE0038F290 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF2BED214A377AE0038F290 /* DetailViewController.xib */; };
 		ACF2BF2014A380A30038F290 /* libMSODataLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2BEE214A37FE90038F290 /* libMSODataLib.a */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,8 @@
 		AC66CE4E14BF9E860098E1F1 /* StarsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarsBackground.png; path = NerdDinner/CustomTableViewCells/StarsBackground.png; sourceTree = "<group>"; };
 		AC66CE4F14BF9E860098E1F1 /* StarsForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StarsForeground.png; path = NerdDinner/CustomTableViewCells/StarsForeground.png; sourceTree = "<group>"; };
 		AC66CE5414BF9E9F0098E1F1 /* IndividualSubviewsBasedApplicationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndividualSubviewsBasedApplicationCell.xib; path = NerdDinner/CustomTableViewCells/IndividualSubviewsBasedApplicationCell.xib; sourceTree = "<group>"; };
-		AC7CF86114BAF8A700AC5F92 /* Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dinner.png; sourceTree = "<group>"; };
+		AC66CED414C21E4F0098E1F1 /* License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = License.rtf; path = NerdDinner/License.rtf; sourceTree = "<group>"; };
+		AC66CED614C222470098E1F1 /* Dinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dinner.png; path = NerdDinner/Images/Dinner.png; sourceTree = "<group>"; };
 		AC7CF87114BAFBEE00AC5F92 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../../github/maggixMBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
 		AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../github/maggixMBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		AC7CF87514BAFEDD00AC5F92 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = ../../github/maggixMBProgressHUD/Demo/GradientButton.h; sourceTree = "<group>"; };
@@ -136,7 +137,6 @@
 		ACF2BEC914A377AE0038F290 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		ACF2BECA14A377AE0038F290 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		ACF2BED014A377AE0038F290 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		ACF2BED314A377AE0038F290 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		ACF2BEDA14A37FE80038F290 /* MSODataLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MSODataLib.xcodeproj; path = ../../github/OData4ObjC/Framework/src/MSODataLib/MSODataLib.xcodeproj; sourceTree = "<group>"; };
 		ACF2BEE414A37FFF0038F290 /* ACSCredential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSCredential.h; sourceTree = "<group>"; };
 		ACF2BEE514A37FFF0038F290 /* ACSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSUtil.h; sourceTree = "<group>"; };
@@ -235,11 +235,12 @@
 		AC7CF85C14BAF89300AC5F92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC66CED614C222470098E1F1 /* Dinner.png */,
+				AC66CED414C21E4F0098E1F1 /* License.rtf */,
 				AC66CE4C14BF9E860098E1F1 /* DarkBackground.png */,
 				AC66CE4D14BF9E860098E1F1 /* LightBackground.png */,
 				AC66CE4E14BF9E860098E1F1 /* StarsBackground.png */,
 				AC66CE4F14BF9E860098E1F1 /* StarsForeground.png */,
-				AC7CF86114BAF8A700AC5F92 /* Dinner.png */,
 			);
 			name = Resources;
 			path = ..;
@@ -378,7 +379,6 @@
 				ACC7984314A3930100021C5B /* MapViewController.h */,
 				ACC7984414A3930100021C5B /* MapViewController.m */,
 				ACF2BECF14A377AE0038F290 /* MasterViewController.xib */,
-				ACF2BED214A377AE0038F290 /* DetailViewController.xib */,
 				ACC7984514A3930100021C5B /* MapViewController.xib */,
 				ACC7992A14A4C0A300021C5B /* MapAnnotationDefault.h */,
 				ACC7992B14A4C0A400021C5B /* MapAnnotationDefault.m */,
@@ -511,6 +511,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Giovanni Maggini";
 			};
 			buildConfigurationList = ACF2BEAD14A377AD0038F290 /* Build configuration list for PBXProject "NerdDinner" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -553,11 +554,9 @@
 			files = (
 				ACF2BEC214A377AE0038F290 /* InfoPlist.strings in Resources */,
 				ACF2BED114A377AE0038F290 /* MasterViewController.xib in Resources */,
-				ACF2BED414A377AE0038F290 /* DetailViewController.xib in Resources */,
 				ACC7984714A3930200021C5B /* MapViewController.xib in Resources */,
 				ACC7992614A4998D00021C5B /* DinnerTypes.plist in Resources */,
 				ACC7992914A49C2400021C5B /* RifiutiTypes.plist in Resources */,
-				AC7CF86B14BAF8A700AC5F92 /* Dinner.png in Resources */,
 				ACBD0EEC14BBB01A00C2FC3C /* ButtonCell.xib in Resources */,
 				ACBD0EEF14BBB01A00C2FC3C /* NibCell.xib in Resources */,
 				AC66CE5014BF9E860098E1F1 /* DarkBackground.png in Resources */,
@@ -565,6 +564,8 @@
 				AC66CE5214BF9E860098E1F1 /* StarsBackground.png in Resources */,
 				AC66CE5314BF9E860098E1F1 /* StarsForeground.png in Resources */,
 				AC66CE5514BF9E9F0098E1F1 /* IndividualSubviewsBasedApplicationCell.xib in Resources */,
+				AC66CED514C21E500098E1F1 /* License.rtf in Resources */,
+				AC66CED714C222470098E1F1 /* Dinner.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,14 +646,6 @@
 				ACF2BED014A377AE0038F290 /* en */,
 			);
 			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		ACF2BED214A377AE0038F290 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACF2BED314A377AE0038F290 /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

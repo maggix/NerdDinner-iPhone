@@ -3,7 +3,7 @@
 //  NerdDinner
 //
 //  Created by Giovanni Maggini on 22/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 Giovanni Maggini. All rights reserved.
 //
 
 #import "AppDelegate.h"
