@@ -50,8 +50,6 @@
 		ACC7984214A392ED00021C5B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC7984114A392ED00021C5B /* MapKit.framework */; };
 		ACC7984614A3930200021C5B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC7984414A3930100021C5B /* MapViewController.m */; };
 		ACC7984714A3930200021C5B /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACC7984514A3930100021C5B /* MapViewController.xib */; };
-		ACC7992614A4998D00021C5B /* DinnerTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACC7992414A4998D00021C5B /* DinnerTypes.plist */; };
-		ACC7992914A49C2400021C5B /* RifiutiTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACC7992814A49C2400021C5B /* RifiutiTypes.plist */; };
 		ACC7992C14A4C0A400021C5B /* MapAnnotationDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC7992B14A4C0A400021C5B /* MapAnnotationDefault.m */; };
 		ACF2BEB814A377AD0038F290 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2BEB714A377AD0038F290 /* UIKit.framework */; };
 		ACF2BEBA14A377AD0038F290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF2BEB914A377AD0038F290 /* Foundation.framework */; };
@@ -139,9 +137,6 @@
 		ACC7984314A3930100021C5B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		ACC7984414A3930100021C5B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		ACC7984514A3930100021C5B /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
-		ACC7992514A4998D00021C5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/DinnerTypes.plist; sourceTree = "<group>"; };
-		ACC7992714A4999700021C5B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = it; path = it.lproj/DinnerTypes.plist; sourceTree = "<group>"; };
-		ACC7992814A49C2400021C5B /* RifiutiTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RifiutiTypes.plist; sourceTree = "<group>"; };
 		ACC7992A14A4C0A300021C5B /* MapAnnotationDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotationDefault.h; sourceTree = "<group>"; };
 		ACC7992B14A4C0A400021C5B /* MapAnnotationDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotationDefault.m; sourceTree = "<group>"; };
 		ACF2BEB314A377AD0038F290 /* NerdDinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NerdDinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,8 +428,6 @@
 				ACF2BEC014A377AE0038F290 /* InfoPlist.strings */,
 				ACF2BEC314A377AE0038F290 /* main.m */,
 				ACF2BEC514A377AE0038F290 /* NerdDinner-Prefix.pch */,
-				ACC7992414A4998D00021C5B /* DinnerTypes.plist */,
-				ACC7992814A49C2400021C5B /* RifiutiTypes.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -593,8 +586,6 @@
 				ACF2BEC214A377AE0038F290 /* InfoPlist.strings in Resources */,
 				ACF2BED114A377AE0038F290 /* MasterViewController.xib in Resources */,
 				ACC7984714A3930200021C5B /* MapViewController.xib in Resources */,
-				ACC7992614A4998D00021C5B /* DinnerTypes.plist in Resources */,
-				ACC7992914A49C2400021C5B /* RifiutiTypes.plist in Resources */,
 				ACBD0EEC14BBB01A00C2FC3C /* ButtonCell.xib in Resources */,
 				ACBD0EEF14BBB01A00C2FC3C /* NibCell.xib in Resources */,
 				AC66CE5014BF9E860098E1F1 /* DarkBackground.png in Resources */,
@@ -671,15 +662,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACC7992414A4998D00021C5B /* DinnerTypes.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACC7992514A4998D00021C5B /* en */,
-				ACC7992714A4999700021C5B /* it */,
-			);
-			name = DinnerTypes.plist;
-			sourceTree = "<group>";
-		};
 		ACF2BEC014A377AE0038F290 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
