@@ -32,6 +32,8 @@
 		AC66CF2814C246FF0098E1F1 /* Default@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66CF2614C246FF0098E1F1 /* Default@2X.png */; };
 		AC7CF87314BAFBEE00AC5F92 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */; };
 		AC7CF87714BAFEDE00AC5F92 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CF87614BAFEDD00AC5F92 /* GradientButton.m */; };
+		AC99992E14D68EDF006229A8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AC99992D14D68EDF006229A8 /* LICENSE */; };
+		AC99993214D68EFF006229A8 /* README in Resources */ = {isa = PBXBuildFile; fileRef = AC99993114D68EFF006229A8 /* README */; };
 		ACBD0EEB14BBB01A00C2FC3C /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ECE14BBB01A00C2FC3C /* ButtonCell.m */; };
 		ACBD0EEC14BBB01A00C2FC3C /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBD0ECF14BBB01A00C2FC3C /* ButtonCell.xib */; };
 		ACBD0EED14BBB01A00C2FC3C /* LabelCell+Selectable.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0ED114BBB01A00C2FC3C /* LabelCell+Selectable.m */; };
@@ -106,6 +108,8 @@
 		AC7CF87214BAFBEE00AC5F92 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../github/maggixMBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		AC7CF87514BAFEDD00AC5F92 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = ../../github/maggixMBProgressHUD/Demo/GradientButton.h; sourceTree = "<group>"; };
 		AC7CF87614BAFEDD00AC5F92 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientButton.m; path = ../../github/maggixMBProgressHUD/Demo/GradientButton.m; sourceTree = "<group>"; };
+		AC99992D14D68EDF006229A8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = NerdDinner/LICENSE; sourceTree = "<group>"; };
+		AC99993114D68EFF006229A8 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = NerdDinner/README; sourceTree = "<group>"; };
 		ACBD0ECD14BBB01A00C2FC3C /* ButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCell.h; sourceTree = "<group>"; };
 		ACBD0ECE14BBB01A00C2FC3C /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 		ACBD0ECF14BBB01A00C2FC3C /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 		AC7CF85C14BAF89300AC5F92 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC99993114D68EFF006229A8 /* README */,
+				AC99992D14D68EDF006229A8 /* LICENSE */,
 				AC66CF2914C247070098E1F1 /* Images */,
 				AC66CED614C222470098E1F1 /* Dinner.png */,
 				AC66CED414C21E4F0098E1F1 /* License.rtf */,
@@ -605,6 +611,8 @@
 				AC66CF2414C246F30098E1F1 /* iTunesArtwork in Resources */,
 				AC66CF2714C246FF0098E1F1 /* Default.png in Resources */,
 				AC66CF2814C246FF0098E1F1 /* Default@2X.png in Resources */,
+				AC99992E14D68EDF006229A8 /* LICENSE in Resources */,
+				AC99993214D68EFF006229A8 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
